@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>直方图均衡 - Mans</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u76f4\u65b9\u56fe\u5747\u8861";
+    var mkdocs_page_input_path = "cv\u7b97\u6cd5/\u76f4\u65b9\u56fe\u5747\u8861.md";
+    var mkdocs_page_url = "/cv\u7b97\u6cd5/\u76f4\u65b9\u56fe\u5747\u8861/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Mans</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Coding</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../coding/Programming/">Programming</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cv算法</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">直方图均衡</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">算法简介</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">算法实现</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">算法问题</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_4">算法证明</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_5">算法实现</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Mans</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Cv算法 &raquo;</li>
+        
+      
+    
+    <li>直方图均衡</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="_1">算法简介</h3>
+<ul>
+<li>直方图均衡化是通过拉伸像素强度分布范围来增强图像对比度的一种方法.</li>
+<li>实质上是对图像进行非线性拉伸,重新分配图像象元值</li>
+<li>有的图像的灰度分布不均匀，出现过亮过暗，或者对比度过低的情况，这样的图像细节不明显，在肉眼观察时会丢失一些信息。这时可以使用直方图均衡技术对图像进行变换，变成肉眼易于分辨的细节分明的图像。</li>
+</ul>
+<h3 id="_2">算法实现</h3>
+<p>算法基本原理是对于原图的每个像素值计算一个对应的新的像素值,保证新的像素值分布更均匀。映射关系如下：</p>
+<p>
+<script type="math/tex; mode=display"> f(x_i)=(L-1)\sum_0^{x_i}\frac{h(x_i)}{w\times h} </script>
+</p>
+<p>其中 <script type="math/tex">x_i</script> 是 某位置的像素值， L是像素值最大值，对于普通的uint8 图像就是255， w,h 是图像的宽和高，本质上是所有元素的数量，<script type="math/tex">h(x_i)</script> 是<script type="math/tex">x_{i}</script>这个像素分布的数量（其实<script type="math/tex">\frac{h(x_i)}{w\times h}</script> 其实是求了每个像素的分布概率）</p>
+<h3 id="_3">算法问题</h3>
+<ol>
+<li>基本的算法是对单通道的灰度图进行的</li>
+<li>对于rgb 图像可以对RGB 三个通道分别进行直方图均衡</li>
+<li>rgb 图像分通道进行直方图均衡容易导致颜色失真，解决办法是将rgb 图像转成YUV格式，仅对Y分量进行均衡化</li>
+<li>直方图均衡后，背景对比度确实得到了改善。但是对图像区域亮度差异比较大（比如左上角非常亮，右下角特别暗）的图像，会损失局部的信息， 这种可以通过自适应的均衡化算法来解决，一般是将图像分成grid,对每个grid 分别进行直方图均衡。</li>
+</ol>
+<h3 id="_4">算法证明</h3>
+<ul>
+<li>我们希望变换后的概率密度函数是一个均匀分布，对于图像来说，就是每个灰度级概率都是相等的。</li>
+<li>以灰度图来说明，把均衡化之前和之后的图中的像素灰度级分布看成F(x)和F(y)，随机变量x和y是灰度取值，且这两个随机变量之间存在函数转换关系y=T(x)。所以问题相当于：已知概率密度函数f(x)和f(y)，求T(x)。
+其中：
+<script type="math/tex; mode=display"> f(x) = \frac {n_x}{M \times N} </script>
+即灰度为<script type="math/tex">n_x</script>的像素占所有像素的比例，MN是图像的行列数；
+<script type="math/tex; mode=display"> f(y)= \frac 1{L−1} </script>
+L是灰度级的个数,因为均衡化的目标就是让图像中的各个灰度级的像素个数能够分配均匀.
+有：</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+F(y)&=P(Y <= y)\\
+&= P(T(X) <= y)\\
+&= P(X <= T'(y))\\
+&= F(x)|_{x=T'(y)}
+\end{aligned}
+ </script>
+上式两边同时求导得到
+<script type="math/tex; mode=display">
+\begin{aligned} 
+f(y) &= f(x) \times \frac{dx}{dy}\\
+&= f(x) \times \frac{dx}{d(T(x))'}
+\end{aligned}
+ </script>
+</p>
+<p>带入已知信息，可以得到
+<script type="math/tex; mode=display">
+\begin{aligned} 
+\frac 1{L-1} = \frac {n_{x}}{M\times N} \times \frac{dx}{d(T(x))'}
+\end{aligned}
+ </script>
+ 整理得到
+ <script type="math/tex; mode=display">
+d(T(x))' = (L-1) \times \frac {n_{x}}{M\times N} dx
+ </script>
+ 两边对x 进行积分, 得到映射函数公式
+<script type="math/tex; mode=display">
+T(x) = (L-1) \times \frac {n_{x}}{M\times N}
+</script>
+</p>
+<h3 id="_5">算法实现</h3>
+<pre><code>def HE_uint16(img):
+''' uint16 的图像'''
+    hist,bins = np.histogram(img.flatten(),65535,[0,65535])
+    cdf = hist.cumsum()
+    cdf_m = np.ma.masked_equal(cdf,0)
+    cdf_m = (cdf_m - cdf_m.min())*65535/(cdf_m.max()-cdf_m.min())
+    cdf = np.ma.filled(cdf_m,0)
+    img2 = cdf[img.astype('int32')]
+    return img2
+
+def HE_uint8(img):
+''' uint8 的图像'''
+    hist,bins = np.histogram(img.flatten(),255,[0,255])
+    cdf = hist.cumsum()
+    cdf_m = np.ma.masked_equal(cdf,0)
+    cdf_m = (cdf_m - cdf_m.min())*255/(cdf_m.max()-cdf_m.min())
+    cdf = np.ma.filled(cdf_m,0)
+    img2 = cdf[img.astype('int32')]
+    return img2
+
+def HE_cv2(img):
+''' opencv2 的直方图均衡，只支持单通道uint8 数据'''
+    imgYUV = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+    channelsYUV = cv2.split(imgYUV)
+    channelsYUV[0] = cv2.equalizeHist(channelsYUV[0])
+    channels = cv2.merge(channelsYUV)
+    image = cv2.cvtColor(channels, cv2.COLOR_YCrCb2BGR)
+    return image
+
+def HE_adaptive(img):
+    imgYUV = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+    channelsYUV = cv2.split(imgYUV)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    channelsYUV[0] = clahe.apply(channelsYUV[0])
+    #channelsYUV[0] = cv2.equalizeHist(channelsYUV[0])
+    channels = cv2.merge(channelsYUV)
+    image = cv2.cvtColor(channels, cv2.COLOR_YCrCb2BGR)
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../coding/Programming/" class="btn btn-neutral" title="Programming"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../coding/Programming/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>

@@ -4,17 +4,29 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2020-01-12</lastmod>
+     <lastmod>2020-06-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>/Programming/</loc>
-     <lastmod>2020-01-12</lastmod>
+     <loc>/coding/Programming/</loc>
+     <lastmod>2020-06-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/cv算法/直方图均衡/</loc>
+     <lastmod>2020-06-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
