@@ -120,6 +120,16 @@
                 </li>
     </ul>
                 </li>
+                <li class="">
+                    
+    <span class="caption-text">Sensor</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../sensor/sensor/">Sensor</a>
+                </li>
+    </ul>
+                </li>
     </ul>
 	    </li>
           
@@ -175,6 +185,7 @@
 <ul>
 <li>散粒噪声</li>
 <li>读出噪声<ul>
+<li>就是相机在读出信号时产生的噪声，是电子通过前置放大器和模-数转换器（ADC）转换为数字信号时引入的不确定性。CCD / EMCCD和sCMOS相机由于传感器的信号读出结构不同，读出噪声也有很大差别。sCMOS相机的读出噪声远低于CCD/EMCCD。</li>
 <li>读出噪声受读出频率影响，频率越高，读出噪声就越高</li>
 <li>读出噪声低好处多多，首先它让我们能够检测非常微弱的信号，使其不至于被淹没在读出噪声中。尤其是在弱光高速成像中，其他噪声的影响很小，读出噪声定义了相机的探测下限。同时，低的读出噪声还能增加图像的有效动态范围，提高对比度。要降低读出噪声，可以通过改进相机的电子设计或降低读出速度来实现。</li>
 </ul>
@@ -198,7 +209,7 @@
 <li>QE很容易理解，就是探测器的探测效率。由于半导体材料对光信号的吸收效率和波长相关，我们看到的QE曲线横轴为波长，纵轴为百分比。</li>
 <li><img alt="" src="../QE.jpg" /></li>
 <li>光在半导体材料中的穿透性和波长相关。500~600nm的黄绿色光，正好能穿透到检测材料的中间，所以检测效率最高。波长变短时，越多光子在到达检测区前就被吸收；波长变长时，越多光子会穿过检测区，或因为能量不足，无法生成光电子。所以我们看到的QE曲线是中间高，两侧降低的。</li>
-<li>相机的 QE和读出噪声决定了相机从读出噪声限制区域到散粒噪声限制区域过度的早晚；</li>
+<li>相机的QE和读出噪声决定了相机从读出噪声限制区域到散粒噪声限制区域过度的早晚；</li>
 <li><img alt="" src="../cam.jpg" /></li>
 </ul>
 <h2 id="adu">ADU(灰度值)</h2>
@@ -232,6 +243,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../../sensor/sensor/" class="btn btn-neutral float-right" title="Sensor">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
       
         <a href="../../ISP/ISP/" class="btn btn-neutral" title="ISP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
@@ -261,6 +274,8 @@
       
         <span><a href="../../ISP/ISP/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../../sensor/sensor/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
