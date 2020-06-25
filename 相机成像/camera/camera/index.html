@@ -7,24 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Camera - Menxin</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <title>相机成像过程 - Menxin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Camera";
+    var mkdocs_page_name = "\u76f8\u673a\u6210\u50cf\u8fc7\u7a0b";
     var mkdocs_page_input_path = "\u76f8\u673a\u6210\u50cf/camera/camera.md";
-    var mkdocs_page_url = "/\u76f8\u673a\u6210\u50cf/camera/camera/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -34,108 +36,76 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../../.." class="icon icon-home"> Menxin</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Coding</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../../coding/Programming/">Programming</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">men's blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Coding</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../coding/Programming/">Welcome to Programming</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Cv算法</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../cv%E7%AE%97%E6%B3%95/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1/">直方图均衡</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">相机成像</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">ISP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ISP/ISP/">ISP</a>
                 </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Cv算法</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../../cv算法/直方图均衡/">直方图均衡</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">相机成像</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">ISP</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../ISP/ISP/">ISP</a>
-                </li>
-    </ul>
-                </li>
-                <li class=" current">
-                    
-    <span class="caption-text">Camera</span>
-    <ul class="subnav">
-                <li class="toctree-l3 current">
-                    
-    <a class="current" href="./">Camera</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l4"><a href="#_1">相机成像过程</a></li>
-    
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Camera</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">相机成像过程</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">基本概念</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">噪声类型</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">对比度</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eq">EQ</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adu">ADU(灰度值)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">电子数目</a>
         <ul>
-        
-            <li><a class="toctree-l5" href="#_2">基本概念</a></li>
-        
-            <li><a class="toctree-l5" href="#_3">噪声类型</a></li>
-        
-            <li><a class="toctree-l5" href="#_4">对比度</a></li>
-        
-            <li><a class="toctree-l5" href="#eq">EQ</a></li>
-        
-            <li><a class="toctree-l5" href="#adu">ADU(灰度值)</a></li>
-        
-            <li><a class="toctree-l5" href="#_5">电子数目</a></li>
-        
+    <li class="toctree-l4"><a class="reference internal" href="#gain">增益(gain)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#offset">偏置（offset)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">电子数目计算</a>
+    </li>
         </ul>
-    
-
+    </li>
     </ul>
                 </li>
     </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Sensor</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../sensor/sensor/">Sensor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sensor</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../sensor/sensor/">Understanding CMOS Image Sensor</a>
                 </li>
     </ul>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -155,19 +125,20 @@
     
       
         
-          <li>相机成像 &raquo;</li>
-        
-      
-        
           <li>Camera &raquo;</li>
         
       
+        
+          <li>相机成像 &raquo;</li>
+        
+      
     
-    <li>Camera</li>
+    <li>相机成像过程</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -243,7 +214,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../sensor/sensor/" class="btn btn-neutral float-right" title="Sensor">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../sensor/sensor/" class="btn btn-neutral float-right" title="Understanding CMOS Image Sensor">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../ISP/ISP/" class="btn btn-neutral" title="ISP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -258,17 +229,17 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -279,8 +250,15 @@
       
     </span>
 </div>
-    <script src="../../../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
