@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Camera - Mans</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Camera";
+    var mkdocs_page_input_path = "\u76f8\u673a\u6210\u50cf/camera/camera.md";
+    var mkdocs_page_url = "/\u76f8\u673a\u6210\u50cf/camera/camera/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Mans</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Coding</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../coding/Programming/">Programming</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cv算法</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cv算法/直方图均衡/">直方图均衡</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">相机成像</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">ISP</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../ISP/ISP/">ISP</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Camera</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Camera</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#_1">相机成像过程</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#_2">基本概念</a></li>
+        
+            <li><a class="toctree-l5" href="#_3">噪声类型</a></li>
+        
+            <li><a class="toctree-l5" href="#_4">对比度</a></li>
+        
+            <li><a class="toctree-l5" href="#eq">EQ</a></li>
+        
+            <li><a class="toctree-l5" href="#adu">ADU(灰度值)</a></li>
+        
+            <li><a class="toctree-l5" href="#_5">电子数目</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Mans</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>相机成像 &raquo;</li>
+        
+      
+        
+          <li>Camera &raquo;</li>
+        
+      
+    
+    <li>Camera</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">相机成像过程</h1>
+<h2 id="_2">基本概念</h2>
+<ul>
+<li>噪声：噪声是围绕着信号上下波动的不确定性，从统计学上来说，就是标准差。</li>
+<li>信噪比： 信号与噪声的比值
+  <script type="math/tex; mode=display"> SNR = \frac {signal*QE} {\sqrt {signal*QE + 暗电流*t + 读出噪声^{2}}} </script>
+</li>
+</ul>
+<h2 id="_3">噪声类型</h2>
+<ul>
+<li>散粒噪声</li>
+<li>读出噪声<ul>
+<li>读出噪声受读出频率影响，频率越高，读出噪声就越高</li>
+<li>读出噪声低好处多多，首先它让我们能够检测非常微弱的信号，使其不至于被淹没在读出噪声中。尤其是在弱光高速成像中，其他噪声的影响很小，读出噪声定义了相机的探测下限。同时，低的读出噪声还能增加图像的有效动态范围，提高对比度。要降低读出噪声，可以通过改进相机的电子设计或降低读出速度来实现。</li>
+</ul>
+</li>
+<li>暗电流<ul>
+<li>暗电流是随时间累积的</li>
+<li>所以制冷是降低暗电流的主要措施</li>
+<li>相机最常用的制冷方法是热电冷却，又称珀尔帖冷却 (Peltier cooling)，即由和传感器相连的散热器进行散热。一般来说，芯片温度每降低7°C，暗电流减半。</li>
+<li>热点（Hot pixel），它们也是暗电流的一部分，是由于某些像素电荷泄露引起的。Hot pixel亮度也会随着曝光时间增加而累积。不过好在这些Hot pixel的位置是固定的，因此可以通过一些算法将它们去掉</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">对比度</h2>
+<ol>
+<li>检查对比度最亮灰度是否设置得过大，导致小灰度值显示过暗；</li>
+<li>背景噪音一般比信号弱很多，适当将对比度最暗灰度调大，使背景噪音消失不见；</li>
+</ol>
+<h2 id="eq">EQ</h2>
+<ul>
+<li>量子效率</li>
+<li>QE很容易理解，就是探测器的探测效率。由于半导体材料对光信号的吸收效率和波长相关，我们看到的QE曲线横轴为波长，纵轴为百分比。</li>
+<li><img alt="" src="../QE.jpg" /></li>
+<li>光在半导体材料中的穿透性和波长相关。500~600nm的黄绿色光，正好能穿透到检测材料的中间，所以检测效率最高。波长变短时，越多光子在到达检测区前就被吸收；波长变长时，越多光子会穿过检测区，或因为能量不足，无法生成光电子。所以我们看到的QE曲线是中间高，两侧降低的。</li>
+<li>相机的 QE和读出噪声决定了相机从读出噪声限制区域到散粒噪声限制区域过度的早晚；</li>
+<li><img alt="" src="../cam.jpg" /></li>
+</ul>
+<h2 id="adu">ADU(灰度值)</h2>
+<ul>
+<li>硅材料（或者其他材料）能够将接收到的光子转换成电子</li>
+<li>转换成的数字信号我们称之为模拟数字单位（ADU）</li>
+<li>做图像处理的工程师们更常把ADU称之为灰度值（Gray Scale）</li>
+<li><img alt="" src="../electron.jpg" /></li>
+</ul>
+<h2 id="_5">电子数目</h2>
+<h3 id="gain">增益(gain)</h3>
+<ul>
+<li>电子通过模数转换器（ADC）按照一定的转换系数转换成数字信号，这个转换系数我们称之为增益（Gain）</li>
+<li>增益的单位是 e-/ADU</li>
+</ul>
+<h3 id="offset">偏置（offset)</h3>
+<ul>
+<li>偏置指每个像素强度的初始值，也就是“相机的底”</li>
+<li>如果相机的底是0，向下波动的噪声会产生负值，而相机中不能有负值，于是一部分数据被Cut掉了，影响了数据的真实性，设置一个初始值便能很好的解决这个问题。</li>
+</ul>
+<h3 id="_6">电子数目计算</h3>
+<ul>
+<li><strong>电子数 = （灰度值 – 偏置） X 增益</strong></li>
+<li>增益不会直接影响图片信噪比</li>
+<li>信号非常弱时，选取小增益可以提高对比度，增强图像层次感。信号非常强时，选取大增益，可以提高成像的动态范围；</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../ISP/ISP/" class="btn btn-neutral" title="ISP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../ISP/ISP/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
