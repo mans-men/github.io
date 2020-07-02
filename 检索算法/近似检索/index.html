@@ -237,6 +237,8 @@ T也应该设置得比较大，反之K越小，L也可以相应的减小。获�
 <li>现象：特征每一维只用了 -20~20 很小部分的值，float32存在很大冗余</li>
 <li>方案：在分布范围(-20~20)内均匀找254个点，把一维的float32值量化为 int8(-127~127)</li>
 <li>量化误差：float32与254个数中的最小距离</li>
+<li><img alt="" src="../imgs/symetric_quant.png" /></li>
+<li><img alt="" src="../imgs/asymetic_quant.png" /></li>
 </ul>
 <h4 id="-ivfinverted-indexfile">倒排索引- IVF(inverted index/file)</h4>
 <ul>
