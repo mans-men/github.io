@@ -7,26 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Understanding CMOS Image Sensor - Menxin</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+  <title>Sensor - Menxin</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../../css/theme.css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Understanding CMOS Image Sensor";
+    var mkdocs_page_name = "Sensor";
     var mkdocs_page_input_path = "\u76f8\u673a\u6210\u50cf/sensor/sensor.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/\u76f8\u673a\u6210\u50cf/sensor/sensor/";
   </script>
   
-  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
   
 </head>
 
@@ -36,129 +34,147 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../../.." class="icon icon-home"> Menxin</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../..">men's blog</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Coding</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../coding/Programming/">Welcome to Programming</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Cv算法</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../cv%E7%AE%97%E6%B3%95/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1/">直方图均衡</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">检索算法</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../../%E6%A3%80%E7%B4%A2%E7%AE%97%E6%B3%95/%E8%BF%91%E4%BC%BC%E6%A3%80%E7%B4%A2/">近似检索</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">相机成像</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="#">ISP</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../ISP/ISP/">ISP</a>
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Coding</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../coding/Programming/">Programming</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Camera</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../camera/camera/">相机成像过程</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cv算法</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cv算法/直方图均衡/">直方图均衡</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Sensor</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Understanding CMOS Image Sensor</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#_1">前言</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#1-cmos-sensor">1 CMOS Sensor 原理</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-pixel-type">2  像素类型 (Pixel type)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-cmos-sensor">3 CMOS Sensor特性</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#s-n-t-q-nt">S ( N, t )  = q ( λ ) ·N·t</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">检索算法</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../检索算法/近似检索/">近似检索</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">相机成像</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">ISP</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../ISP/ISP/">ISP</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Camera</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../camera/camera/">Camera</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Sensor</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Sensor</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#understanding-cmos-image-sensor">Understanding CMOS Image Sensor</a></li>
+    
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#31-quantum-efficiency">3.1 量子效率 （Quantum Efficiency）</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#32-saturation-capacity">3.2 势阱容量 （Saturation Capacity）</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#33-noise">3.3 噪声 （Noise）</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#34-snr">3.4 信噪比 （SNR）</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#35-dynamic-range">3.5 动态范围 （Dynamic Range）</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#36-sensitivity">3.6 灵敏度 （Sensitivity）</a>
-    </li>
+        
+            <li><a class="toctree-l5" href="#_1">前言</a></li>
+        
+            <li><a class="toctree-l5" href="#1-cmos-sensor">1 CMOS Sensor 原理</a></li>
+        
+            <li><a class="toctree-l5" href="#2-pixel-type">2  像素类型 (Pixel type)</a></li>
+        
+            <li><a class="toctree-l5" href="#3-cmos-sensor">3 CMOS Sensor特性</a></li>
+        
+            <li><a class="toctree-l5" href="#s-n-t-q-nt">S ( N, t )  = q ( λ ) ·N·t</a></li>
+        
+            <li><a class="toctree-l5" href="#4-cmos-sensor">4 CMOS Sensor接口</a></li>
+        
+            <li><a class="toctree-l5" href="#5-artifact">5. 图像伪影 (Artifact)</a></li>
+        
+            <li><a class="toctree-l5" href="#55-veiling-glare">5.5 面纱眩光 (Veiling glare)</a></li>
+        
+            <li><a class="toctree-l5" href="#56-streaking-artifact">5.6 条纹伪影 (Streaking Artifact)</a></li>
+        
+            <li><a class="toctree-l5" href="#57-contouring">5.7 等高线效应 (Contouring)</a></li>
+        
         </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-cmos-sensor">4 CMOS Sensor接口</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#41">4.1 控制接口</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#42">4.2 数据接口</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#43">4.3 帧结构</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#46-companding">4.6 Companding 模式</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-artifact">5. 图像伪影 (Artifact)</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#51-moire">5.1 摩尔纹 (Moiré)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#52-maze">5.2 迷宫格 (Maze)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#53-purple-fringing">5.3 紫边 (Purple Fringing)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#chromatic-aberration">Chromatic Aberration</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#54-flare">5.4 眩光与鬼影 (Flare)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#55-veiling-glare">5.5 面纱眩光 (Veiling glare)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#56-streaking-artifact">5.6 条纹伪影 (Streaking Artifact)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#57-contouring">5.7 等高线效应 (Contouring)</a>
-    </li>
+    
+
     </ul>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Tone mapping</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../tone-mapping/tone%20mapping/">Tone mapping</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Tone mapping</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../tone-mapping/tone mapping/">Tone mapping</a>
                 </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">动态范围</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../%E5%8A%A8%E6%80%81%E8%8C%83%E5%9B%B4/%E5%8A%A8%E6%80%81%E8%8C%83%E5%9B%B4/">动态范围</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">动态范围</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../动态范围/动态范围/">动态范围</a>
                 </li>
     </ul>
-                    </li>
-                </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
       </div>
-    </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -178,20 +194,19 @@
     
       
         
-          <li>Sensor &raquo;</li>
-        
-      
-        
           <li>相机成像 &raquo;</li>
         
       
+        
+          <li>Sensor &raquo;</li>
+        
+      
     
-    <li>Understanding CMOS Image Sensor</li>
+    <li>Sensor</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
-  
   <hr/>
 </div>
           <div role="main">
@@ -1129,10 +1144,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../tone-mapping/tone%20mapping/" class="btn btn-neutral float-right" title="Tone mapping">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../tone-mapping/tone mapping/" class="btn btn-neutral float-right" title="Tone mapping">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../camera/camera/" class="btn btn-neutral" title="相机成像过程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../camera/camera/" class="btn btn-neutral" title="Camera"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1144,36 +1159,29 @@
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
     </section>
-
+    
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
+  <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
         <span><a href="../../camera/camera/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../tone-mapping/tone%20mapping/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../tone-mapping/tone mapping/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-      <script src="../../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
