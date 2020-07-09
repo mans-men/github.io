@@ -7,24 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>近似检索 - Menxin</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "\u8fd1\u4f3c\u68c0\u7d22";
     var mkdocs_page_input_path = "\u68c0\u7d22\u7b97\u6cd5/\u8fd1\u4f3c\u68c0\u7d22.md";
-    var mkdocs_page_url = "/\u68c0\u7d22\u7b97\u6cd5/\u8fd1\u4f3c\u68c0\u7d22/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -34,133 +36,121 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Menxin</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Coding</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../coding/Programming/">Programming</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Cv算法</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../cv算法/直方图均衡/">直方图均衡</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">检索算法</span>
-    <ul class="subnav">
-                <li class=" current">
-                    
-    <a class="current" href="./">近似检索</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">近似检索</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">men's blog</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Coding</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coding/Programming/">Welcome to Programming</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Cv算法</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cv%E7%AE%97%E6%B3%95/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1/">直方图均衡</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">检索算法</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">近似检索</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">近似检索概念</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">近似检索工具</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">近似检索算法介绍</a>
         <ul>
-        
-            <li><a class="toctree-l4" href="#_2">近似检索概念</a></li>
-        
-            <li><a class="toctree-l4" href="#_3">近似检索工具</a></li>
-        
-            <li><a class="toctree-l4" href="#_4">近似检索算法介绍</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#_5">基于树的检索算法</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">基于哈希的空间划分法</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lsh">LSH 算法</a>
+    </li>
         </ul>
-    
-
-    </ul>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">相机成像</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">ISP</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../相机成像/ISP/ISP/">ISP</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Camera</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../相机成像/camera/camera/">Camera</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Sensor</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../相机成像/sensor/sensor/">Sensor</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Tone mapping</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../相机成像/tone-mapping/tone mapping/">Tone mapping</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">动态范围</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../相机成像/动态范围/动态范围/">动态范围</a>
-                </li>
-    </ul>
-                </li>
-    </ul>
-	    </li>
-          
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quatization">向量量化的编码算法（Quatization）</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#scalar-quantization">Scalar Quantization（线性量化）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-ivfinverted-indexfile">倒排索引- IVF(inverted index/file)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#product-quantization">Product Quantization</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">基于图的搜索方法</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#hnswhierarchcal-navigable-small-world-graphs">HNSW(Hierarchcal Navigable Small World graphs)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ivfpq">IVFPQ</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ivfpq-hnsw">IVFPQ-HNSW</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rerank">Rerank</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#reference">reference</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">相机成像</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">ISO</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/ISO/ISO/">ISO</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">ISP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/ISP/ISP/">ISP</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Camera</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/camera/camera/">相机成像过程</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Sensor</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/sensor/sensor/">Understanding CMOS Image Sensor</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Tone mapping</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/tone-mapping/tone%20mapping/">Tone mapping</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">动态范围</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/%E5%8A%A8%E6%80%81%E8%8C%83%E5%9B%B4/%E5%8A%A8%E6%80%81%E8%8C%83%E5%9B%B4/">动态范围</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -189,6 +179,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -346,10 +337,10 @@ T也应该设置得比较大，反之K越小，L也可以相应的减小。获�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../相机成像/ISP/ISP/" class="btn btn-neutral float-right" title="ISP">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/ISO/ISO/" class="btn btn-neutral float-right" title="ISO">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../cv算法/直方图均衡/" class="btn btn-neutral" title="直方图均衡"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../cv%E7%AE%97%E6%B3%95/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1/" class="btn btn-neutral" title="直方图均衡"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -361,29 +352,36 @@ T也应该设置得比较大，反之K越小，L也可以相应的减小。获�
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../cv算法/直方图均衡/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../cv%E7%AE%97%E6%B3%95/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%9D%87%E8%A1%A1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../相机成像/ISP/ISP/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../%E7%9B%B8%E6%9C%BA%E6%88%90%E5%83%8F/ISO/ISO/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script src="../../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
